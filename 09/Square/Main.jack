@@ -13,9 +13,16 @@ class Main {
         var SquareGame game;
 
         let game = SquareGame.new();
+        do Output.printString("Welcome to Etcha-Sketch!");
+        do Output.println();
+        do Output.printString("To start, press UP, DOWN, LEFT, or RIGHT on your keyboard");
+        do Output.println();
+        do Output.printString("When you're done with you're drawing, just press q");
+        do Output.println();
         do game.run();
         do game.dispose();
 
         return;
     }
 }
+
