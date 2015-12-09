@@ -18,3 +18,8 @@ unless is_readable?(asm_filename)
 end
 
 puts "The contents of #{asm_filename}"
+asm_filename = FIle.open(asm_filename, 'r')
+
+puts asm_filename.read
+
+#puts asm_filename: just gives address in memory
