@@ -8,9 +8,10 @@ class Assembler
 	end
 
 	def assemble!
-		# hack_instructions = Parser.parse_asm
-		# @hack_file << hack_instructions	
+		@parser.parse.each do |instruction|
+			@hack_file << instruction << "\n"
 	end	
+end
 
 	def instructions_from_file
 		lines = @asm_file.readlines
