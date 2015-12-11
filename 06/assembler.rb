@@ -1,17 +1,15 @@
+require_relative 'parser'
+
 class Assembler
 	def initialize(asm_file, hack_file)
 		@asm_file = asm_file
 		@hack_file = hack_file
-
-		@asm_instructions = instructions_from_file
-		p @asm_instructions
-		#@parser = Parser.new(@asm_instructions)
+		@parser = Parser.new(instructions_from_file)
 	end
 
 	def assemble!
 		# hack_instructions = Parser.parse_asm
-		# @hack_file << hack_instructions
-		
+		# @hack_file << hack_instructions	
 	end	
 
 	def instructions_from_file
@@ -19,9 +17,9 @@ class Assembler
 		lines.each do| line |
 			line.gsub! /\/\/.*/,''
 			line.strip!
+			lines.delete("")
+			return lines
 		end
-		lines.delete("")
-		return lines
 	end
 end
 
@@ -72,5 +70,4 @@ end
 
 #overall, you check for the incoming arguments, see if they're readable, and then if they are
 #give them to the assembler.
-
 
