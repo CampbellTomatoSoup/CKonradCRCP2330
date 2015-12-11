@@ -1,7 +1,12 @@
 class Parser 
 	def initialize (assembly_instructions)
 		@assembly_instructions = assembly_instructions
+		@machine_instructions = []
 	end
-	puts @assembly_instructions
+	
+	def parse
+		#TODO .... translate @assembly_instructions
+		@machine_instructions
+	end
 
 end
